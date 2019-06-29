@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/update.js"></script>
+		<style>
+			 .area {
+				margin: 20px auto 0px auto;
+			}
+			
+	 		.mui-input-group {
+				margin-top: 10px;
+			}
+			.mui-input-group:first-child {
+				margin-top: 50%;
+			}
+			.mui-input-group label {
+				width: 22%;
+			}
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 78%;
+			}
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 6px;
+			}
+			
+			.mui-content-padded {
+				
+			}
+			
+			.mui-btn {
+				padding: 10px;
+			}
+		.link-area {
+				display: block;
+				margin-top: 0px;
+				text-align: center;
+			}
+			.spliter {
+				color: #bbb;
+				padding: 0px 8px;
+			}
+			
+			.oauth-area {
+				position: absolute;
+				bottom: 20px;
+				left: 0px;
+				text-align: center;
+				width: 100%;
+				padding: 0px;
+				margin: 0px;
+			}
+			.oauth-area .oauth-btn {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				background-size: 30px 30px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				margin: 0px 20px;
+				-webkit-filter: grayscale(100%);
+				border: solid 1px #ddd;
+				border-radius: 25px;
+			}
+			
+			.oauth-area .oauth-btn:active {
+				border: solid 1px #aaa;
+			}
+			
+			.oauth-area .oauth-btn.disabled {
+				background-color: #ddd;
+			} 
+
+    .icon {
+       width: 6em; height: 6em;
+       vertical-align: -0.15em; 
+       fill: currentColor;
+       overflow: hidden;
+   
+
+    }  
+ 
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			 <div class="link-area" style=" padding-top: 30%; "><svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-touxiang3"></use>
+				</svg></div> 
+			<form id='login-form' class="mui-input-group">
+				<div class="mui-input-row">
+					<label>学号</label>
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入学号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell">
+						自动登录
+						<div id="autoLogin" class="mui-switch">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li> 
+				</ul>
+			</form>
+			<div class="mui-content-padded">
+				<button id='login' type="button" class="mui-btn mui-btn-block mui-btn-primary" data-loading-text="提交中">登录</button>
+				
+				<div class="link-area"></span> <a id='forgetPassword'>密码错误</a> | <a id='idqq'>在线联系</a>
+		 		</div>
+			</div> 
+			<div class="mui-content-padded ">
+			<div class="link-area" style=" padding-top: 50%; ">
+             <h5> 广西现代职业技术学院内测版</h5>
+			 <h6> 纯属练手 版权归 &copy; 创享 bfniw.com 所有 </h6>
+			</div>
+			</div>
+		</div>
+
+
+		<script type="text/javascript">
+			
+			var info = document.getElementById("info");
+			document.getElementById("forgetPassword").addEventListener('tap', function() {
+				mui.alert(' 本系统暂未对接新接品 \n 没时间去对接 ,现使用是默认接口 \n 由于之前在新版上修改了密码的小伙伴可以私聊我 \n (学号+密码 2017xxx的密码) \n 所有信息将在24小时内回复 ',
+					'得实e学精简版',
+					function() {
+						/* info.innerText = '你刚关闭了警告框'; */
+					});
+			});
+			var info = document.getElementById("info");
+			document.getElementById("idqq").addEventListener('tap', function() {
+				mui.alert(' QQ:423334592 \n 微信:y_e_s_s_s_s \n 创享提供技术支持  ', '目前在线客服 ', function() {
+					/* info.innerText = '你刚关闭了警告框'; */
+				});
+			});
+		</script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.enterfocus.js"></script>
+		<script src="js/iconfont.js"></script>
+		<script src="js/app.js"></script>
+		
+		<script>
+			(function($, doc) {
+				$.init({
+					statusBarBackground: '#f7f7f7'
+				});
+				$.plusReady(function() {
+					plus.screen.lockOrientation("portrait-primary");
+					var settings = app.getSettings();
+					var state = app.getState();
+					var mainPage = plus.webview.getWebviewById("main");
+					var main_loaded_flag = false;
+					if (!mainPage) {
+						mainPage = $.preload({
+								"id": 'main',
+								"url": 'main.html',
+							
+					});
+					
+					} else {
+						main_loaded_flag = true;
+					}
+					mainPage.addEventListener("loaded", function() {
+						main_loaded_flag = true;
+					});
+					var toMain = function() {
+						//使用定时器的原因：
+						//可能执行太快，main页面loaded事件尚未触发就执行自定义事件，此时必然会失败
+						var id = setInterval(function() {
+							if (main_loaded_flag) {
+								clearInterval(id);
+								$.fire(mainPage, 'show', null);
+								mainPage.show("pop-in");
+							}
+						}, 20);
+					};
+					//检查 "登录状态/锁屏状态" 开始
+					if (settings.autoLogin && state.token && settings.gestures) {
+						$.openWindow({
+							url: 'unlock.html',
+							id: 'unlock',
+							show: {
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					} else if (settings.autoLogin && state.token) {
+						toMain();
+					}
+
+
+					// close splash
+					setTimeout(function() {
+						//关闭 splash
+						plus.navigator.closeSplashscreen();
+					}, 600);
+					//检查 "登录状态/锁屏状态" 结束
+					var loginButton = doc.getElementById('login');
+					var accountBox = doc.getElementById('account');
+					var passwordBox = doc.getElementById('password');
+					var autoLoginButton = doc.getElementById("autoLogin");
+					var regButton = doc.getElementById('reg');
+					var forgetButton = doc.getElementById('forgetPassword');
+					loginButton.addEventListener('tap', function(event) {
+						var loginInfo = {
+							account: accountBox.value,
+							password: passwordBox.value
+						};
+						app.login(loginInfo, function(err) {
+							if (err) {
+								plus.nativeUI.toast(err);
+								return;
+							}
+							toMain();
+						});
+					});
+					$.enterfocus('#login-form input', function() {
+						$.trigger(loginButton, 'tap');
+					});
+					autoLoginButton.classList[settings.autoLogin ? 'add' : 'remove']('mui-active')
+					autoLoginButton.addEventListener('toggle', function(event) {
+						setTimeout(function() {
+							var isActive = event.detail.isActive;
+							settings.autoLogin = isActive;
+							app.setSettings(settings);
+						}, 50);
+					}, false);
+
+					/*
+					 * 
+					 * regButton.addEventListener('tap', function(event) {
+					 	$.openWindow({
+					 	url: 'reg.html',
+					 	id: 'reg',
+					 		preload: true,
+					 		show: {
+					 			aniShow: 'pop-in'
+					 	},
+					 		styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					}, false);
+					forgetButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							url: 'forget_password.html',
+							id: 'forget_password',
+							preload: true,
+							show: {
+								aniShow: 'pop-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					}, false);  
+					* */
+
+					//
+					// 					window.addEventListener('resize', function() {
+					// 						oauthArea.style.display = document.body.clientHeight > 400 ? 'block' : 'none';
+					// 					}, false);
+					//
+					var backButtonPress = 0;
+					$.back = function(event) {
+						backButtonPress++;
+						if (backButtonPress > 1) {
+							plus.runtime.quit();
+						} else {
+							plus.nativeUI.toast('再按一次退出应用');
+						}
+						setTimeout(function() {
+							backButtonPress = 0;
+						}, 1000);
+						return false;
+					};
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

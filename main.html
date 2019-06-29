@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/iconfont.js" ></script>
+		<style>
+			.area {
+				margin: 20px auto 0px auto;
+			}
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			.mui-input-group label {
+				width: 22%;
+			}
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 78%;
+			}
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 6px;
+			}
+			.mui-content-padded {
+				margin-top: 25px;
+			}
+			.mui-btn {
+				padding: 10px;
+			}
+			.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+				margin-top: 1px;
+			}
+			.mui-li-z{		
+                font-size: 15px;
+                line-height: 15px;
+                display: block;
+                width: 100%;
+                height: 15px;
+                margin-top: 3px; 
+                text-overflow: ellipsis;
+                color: #333;
+            }
+	        .mui-table-view.mui-grid-view .mui-table-view-cell>a:not(.mui-btn) {
+                margin: -10px 0 0 -14px;
+            }
+                           
+            .icon {
+                width: 1.8em;
+                height: 1.8em;
+                vertical-align: 0em;
+                fill: currentColor;
+                overflow: hidden;
+            }
+            .mui-table-view.mui-grid-view .mui-table-view-cell {
+                font-size: 17px;
+                display: inline-block;
+                margin-right: -4px;
+                padding: 16px 0 0 14px;
+                text-align: center;
+                vertical-align: middle;
+                background: 0 0;
+             }
+			 .mui-table-view-cell>.mui-badge, .mui-table-view-cell>.mui-btn, .mui-table-view-cell>.mui-switch, .mui-table-view-cell>a>.mui-badge, .mui-table-view-cell>a>.mui-btn, .mui-table-view-cell>a>.mui-switch {
+    position: absolute;
+    top: 23%;
+    right: 5px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+			 .link-area {
+			 		display: block;
+			 		margin-top: 0px;
+			 		text-align: center;
+			 	}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+				<h1 class="mui-title">得实e学精简版</h1>
+				<button id='setting' class=" mui-pull-right mui-btn-link">设置</button>
+			</header>
+		<div class="mui-slider" style="padding-top: 45px;">
+  <div class="mui-slider-group mui-slider-loop">
+    <!--支持循环，需要重复图片节点-->
+    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="img/2.png" /></a></div>
+    <div class="mui-slider-item"><a href="#"><img src="img/1.jpg" /></a></div>
+    <div class="mui-slider-item"><a href="#"><img src="img/2.jpg" /></a></div>
+<!--    <div class="mui-slider-item"><a href="#"><img src="img/3.png" /></a></div> -->
+    <!--支持循环，需要重复图片节点-->
+    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="img/1.jpg" /></a></div>
+  </div>
+</div>
+		
+<div class=" " style="background-color:#fff;padding-top: 0px;">
+		    
+		    <ul class="mui-table-view mui-table-view-chevron">
+		    <li  class="mui-table-view-cell">学校官方应用</li>
+	       </ul>  
+		    <ul class="mui-table-view mui-grid-view">
+		    	
+		        <li id="ziyuan" class="mui-table-view-cell mui-media mui-col-xs-3">
+					
+		            <a href="">
+		            <!--    <img class="mui-media-object" src="images/11.png">-->
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziyuan"></use></svg>                            
+		                <div class="mui-li-z ">我的课程</div></a></li>
+		        <li  id="yunziyuan" class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="">
+		               
+		                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-yunziyuan"></use></svg> 
+		                <div class="mui-li-z">资源</div></a></li>
+		        <li id="zuoye" class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="#">
+		            	 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zuoye"></use></svg> 
+		                <div class="mui-li-z ">作业</div></a></li>
+		        <li id="question" class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="#">
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-question"></use></svg> 
+		                <div class="mui-li-z ">问卷</div></a></li>
+		            <div class="mui-android"></div>
+		         <li id="icongo" class="mui-table-view-cell mui-media mui-col-xs-3">
+					 <!-- <span class="mui-badge mui-badge-danger">4</span> -->
+		            <a href="#">
+		            <!--    <img class="mui-media-object" src="images/11.png">-->
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-id-321"></use></svg>                            
+		                <div class="mui-li-z ">公告</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="#">
+		               
+		                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-lixianxiazai"></use></svg> 
+		                <div class="mui-li-z ">离线下载</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+					<!-- <span class="mui-badge mui-badge-danger">2</span> -->
+		            <a href="#">
+		            	 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-daibanrenwu"></use></svg> 
+		                <div class="mui-li-z ">代办任务</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="#">
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-lianxirenc"></use></svg> 
+		                <div class="mui-li-z ">联系人</div></a></li>       
+		         <li class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="#">
+		            <!--    <img class="mui-media-object" src="images/11.png">-->
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhibokecheng"></use></svg>                            
+		                <div class="mui-li-z ">直播课程</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+					<!-- <span class="mui-badge mui-badge-danger">1</span> -->
+		            <a href="#">
+		                 
+					      
+					   
+		                 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-xitongxiaoxi"></use></svg> 
+		                <div class="mui-li-z ">系统消息</div></a></li>  
+		        <li class="mui-table-view-cell mui-media mui-col-xs-3">  
+		            <a href="#">
+		            	 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-tianjia"></use></svg> 
+		                <div class="mui-li-z ">待添加</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-3">  
+		            <a href="#">
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-tianjia"></use></svg> 
+		                <div class="mui-li-z ">待添加</div></a></li>        
+		                       
+		    </ul>     
+		</div>
+                                                   		                    
+		<div class=" " style="background-color:#fff;padding-top: 0px;">
+		    
+		    <ul class="mui-table-view mui-table-view-chevron">
+		    <li  class="mui-table-view-cell">创享服务</li>
+	       </ul>  
+		    <ul class="mui-table-view mui-grid-view">
+		    	<li class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="#">
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-tianjia"></use></svg> 
+		                <div class="mui-li-z ">待添加</div></a></li>       
+		         <li class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="#">
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-tianjia"></use></svg> 
+		                <div class="mui-li-z ">待添加</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="#">
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-tianjia"></use></svg> 
+		                <div class="mui-li-z ">待添加</div></a></li>     
+		        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="#">
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-tianjia"></use></svg> 
+		                <div class="mui-li-z ">待添加</div></a></li>    
+		                    
+		     
+				    </ul>  
+					<!-- <div class="mui-content-padded ">
+					 <div class="link-area" >
+	                     <h5> 本软件是精简版其他功能待添加中</h5> 
+					  <h6> 纯属练手 版权归 &copy; 创享 bfniw.com 所有 </h6>
+					 </div>
+					 </div> -->
+					
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>		
+	    <script src="js/vue.min.js"></script>
+		
+		<script type="text/javascript">
+ 
+		  
+			</script>
+					
+					
+					
+	       <script>
+			  // 	var key = 'userKey';
+			   	//localStorage.setItem(key, 'Value');
+			   //	var key = localStorage.getItem(key);
+			   	  
+			   	//var myItem = localStorage.getItem( user );
+			   //	mui.toast("json:::" + key ); 
+				
+				var keys = 'userKey';
+			//	var userKey = data.userKey ;
+			//	localStorage.setItem(keys, userKey);
+							   
+				//   var keys = localStorage.getItem(keys); 
+				//var myItem = localStorage.getItem( user );
+			//	mui.toast("jsons:::" + keys ); 
+				
+				
+				
+				 
+				
+			   //更新
+			   	 mui.ajax('https://www.bfniw.com/1/update.json',{
+			   	dataType:'json',//服务器返回json格式数据
+			   	type:'post',//HTTP请求类型
+			   	timeout:10000,//超时时间设置为10秒；            
+			   	success:function(data){
+			       if (data.status > 1 ) {   
+			        plus.ui.confirm(data.note, function(i) {  
+			            if (0 == i) {  
+			                plus.runtime.openURL(data.url);    
+			            }   
+			        }, data.title, ["立即更新", "取　　消"]);  
+			        } else {  
+			       // mui.toast('得实e学精简版 V1.3.0 已是最新版本~')  
+			        }   
+			               
+			   	},
+			   	error:function(xhr,type,errorThrown){
+			   		//异常处理；
+			   		console.log(type);
+			   	}   
+			   });
+			   
+			   
+					  //获得slider插件对象
+					var gallery = mui('.mui-slider');
+					gallery.slider({
+					interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+					});	
+					
+		    		(function($, doc) {
+						$.init();
+				    
+				          var  settings = app.getSettings();
+						 // var loginName = doc.getElementById('loginName');
+						//
+					/* 	window.addEventListener('show', function() {
+							var state = app.getState();
+		    					loginName.innerText = state.loginName;
+		    					
+		    					
+		    					
+						}, false); */   
+						
+						$.plusReady(function() {
+							var settingPage = $.preload(
+							
+							{
+								"id": 'setting',
+								"url": 'setting.html'
+							}); 
+							
+								var settingPage = $.preload(
+							
+							{
+								"id": 'ziyuan',
+								"url": 'perform/ziyuan.html'
+							}); //我的课程
+							var settingPage = $.preload(
+							
+							{
+								"id": 'yunziyuan',
+								"url": 'perform/yunziyuan.html'
+							});  //资源
+							var settingPage = $.preload(
+							
+							{
+								"id": 'zuoye',
+							   "url": 'perform/zuoye.html'
+							}); //作业
+							 var settingPage = $.preload(
+							 {
+								 "id" : 'question',
+								 "url" : 'perform/question.html'
+							 }
+							 );
+							  var settingPage = $.preload({
+								 "id" : 'icongo',
+								 "url" : 'perform/icongo.html'
+							  });
+							//设置
+							var settingButton = doc.getElementById('setting');
+							//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
+							settingButton.addEventListener('tap', function(event) {
+								$.openWindow({
+									id: 'setting', 
+									show: {
+										aniShow: 'pop-in'
+									},  
+									styles: {
+										extras: {    //extras里面的就是参数了
+                                       name: "zqm"
+                                     },
+										popGesture: 'hide'
+									},  
+									waiting: {
+										autoShow: false
+									},
+									
+									
+								});
+						var settingButton = doc.getElementById('icongo');
+						//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
+						settingButton.addEventListener('tap', function(event) {
+							$.openWindow({
+								id: 'icongo', 
+								show: {
+									aniShow: 'pop-in'
+								},  
+								styles: {
+									extras: {    //extras里面的就是参数了
+						           name: "zqm"
+						         },
+									popGesture: 'hide'
+								},  
+								waiting: {
+									autoShow: false
+								},
+								
+								
+							});
+												
+							  
+							
+							
+							//--
+							
+							//资源
+							var ziyuan = doc.getElementById('ziyuan');
+							//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
+							ziyuan.addEventListener('tap', function(event) {
+								$.openWindow({
+									id: 'ziyuan', 
+									show: {
+										aniShow: 'pop-in'
+									},  
+									styles: {
+										popGesture: 'hide'
+									},  
+									waiting: {
+										autoShow: false
+									}
+								});
+							});
+							//设置
+							var settingButton = doc.getElementById('yunziyuan');
+							//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
+							settingButton.addEventListener('tap', function(event) {
+								$.openWindow({
+									id: 'yunziyuan', 
+									show: {
+										aniShow: 'pop-in'
+									},  
+									styles: {
+										popGesture: 'hide'
+									},  
+									waiting: {
+										autoShow: false
+									}
+								});
+							});
+							
+							//作业
+							var settingButton = doc.getElementById('zuoye');
+							//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
+							settingButton.addEventListener('tap', function(event) {
+								$.openWindow({
+									id: 'zuoye', 
+									show: {
+										aniShow: 'pop-in'
+									},  
+									styles: {
+										popGesture: 'hide'
+									},  
+									waiting: {
+										autoShow: false
+									}
+								});
+							});
+							
+							
+							var settingButton = doc.getElementById('question');
+							settingButton.addEventListener('tap', function (event){
+								$.openWindow({
+									id: 'question',
+									show: {
+										aniShow: 'pop-in'
+									},  
+									styles: {
+										extras: {    //extras里面的就是参数了
+									   name: "zqm"
+									 },
+										popGesture: 'hide'
+									},  
+									waiting: {
+										autoShow: false
+									}
+								});
+							});
+							//--
+							$.oldBack = mui.back;
+							var backButtonPress = 0;
+							$.back = function(event) {
+								backButtonPress++;
+								if (backButtonPress > 2) {
+									plus.runtime.quit();
+								} else {
+									plus.nativeUI.toast('再按一次退出应用');
+								}
+								setTimeout(function() {
+									backButtonPress = 0;
+								}, 1000);
+								return false;
+							};
+						});
+					}(mui, document));
+				</script>
+				
+	
+			    
+        
+	</body>
+
+</html>
